@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Etch a Sketch</title>
+    <link rel="icon" href="">
+</head>
+
+<body>
+    <div class="container" id="body">
+        <div class="panel">
+            <h1>SIMPLE DRAW</h1>
+            <div class="buttons">
+                <button id="clear" class="dropbtn" type="button" role="button" onclick="clean()">Clean Board</button>
+                <button id="erasor" class="dropbtn" type="button" onclick="erasor()">Erasor</button>
+                <div class="dropdown">
+                    <button class="dropbtn">Colors Pick</button>
+                    <div class="dropdown-content">
+                        <button onclick="activateCustom()" class="tick" id="tick3"> Custom <input placeholder="Custom"
+                                type="color" id="custom"></input></button>
+                        <div class="colorset">
+                            <span class="color" id="aqua" style="background-color: aqua;"></span>
+                            <span class="color" id="aquaMarine" style="background-color: aquamarine;"></span>
+                            <span class="color" id="azure" style="background-color: azure;"></span>
+                            <span class="color" id="beige" style="background-color: beige;"></span>
+                            <span class="color" id="bisque" style="background-color: bisque;"></span>
+                            <span class="color" id="black" style="background-color:black;"></span>
+                            <span class="color" id="blanchedalmond" style="background-color: blanchedalmond;"></span>
+                            <span class="color" id="blue" style="background-color:blue;"></span>
+                        </div>
+                        <div class="colorset">
+                            <span class="color" id="blueviolet" style="background-color: blueviolet;"></span>
+                            <span class="color" id="brown" style="background-color: brown;"></span>
+                            <span class="color" id="burlywood" style="background-color: burlywood;"></span>
+                            <span class="color" id="cadetblue" style="background-color: cadetblue;"></span>
+                            <span class="color" id="chartreuse" style="background-color: chartreuse;"></span>
+                            <span class="color" id="chocolate" style="background-color: chocolate;"></span>
+                            <span class="color" id="coral" style="background-color: coral;"></span>
+                            <span class="color" id="cornflowerblue" style="background-color: cornflowerblue;"></span>
+                        </div>
+                        <div class="colorset">
+                            <span class="color" id="cornsilk" style="background-color: cornsilk;"></span>
+                            <span class="color" id="crimson" style="background-color: crimson;"></span>
+                            <span class="color" id="cyan" style="background-color: cyan;"></span>
+                            <span class="color" id="darkblue" style="background-color: darkblue;"></span>
+                            <span class="color" id="darkcyan" style="background-color: darkcyan;"></span>
+                            <span class="color" id="darkgoldenrod" style="background-color: darkgoldenrod;"></span>
+                            <span class="color" id="darkgray" style="background-color: darkgray;"></span>
+                            <span class="color" id="darkgreen" style="background-color: darkgreen;"></span>
+                        </div>
+                        <div class="colorset">
+                            <span class="color" id="darkorange" style="background-color: darkorange;"></span>
+                            <span class="color" id="darkolivegreen" style="background-color: darkolivegreen;"></span>
+                            <span class="color" id="darkslateblue" style="background-color: darkslateblue;"></span>
+                            <span class="color" id="darkslategray" style="background-color: darkslategray;"></span>
+                            <div class="otherChoices">
+                                <button class="tick" onclick="activateMulti()" id="tick" type="button">Rainbow</button>
+                                <button onclick="activateRandom()" class="tick" id="tick2">Random</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="board"></div>
+        <div class="panel">
+            <div class="buttons rightside">
+                <h3 style="margin-top: 30px;">
+                    This is a project from Odin. It suppose to be Etch a Sketch,
+                    but some features were added to level up the experiance.
+                    You can simply start drawing by clicking once anywhere and stop by clicking again.
+                    You also can change the density of pixels by specifying below how many they are in the board
+                    (neither less than 4 nor more than 14400).
+                </h3>
+                <div class="buttons form">
+                    <input style="margin: 0px;" onchange="setThick()" id="thickness" class="dropbtn" type="number"
+                        value="256">
+                    <button type="button" onclick="setThick()" class=dropbtn id="setThick">Set Pixels Number</button>
+                    <div class="boardActivate">
+                        <span style=" padding: 0px; border-width: 0px;">Drawing Board:</span>
+                        <span style="border-width: 0px;" id="boardActivate"> Inactive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./etch-sketch.js"></script>
+</body>
+</html
